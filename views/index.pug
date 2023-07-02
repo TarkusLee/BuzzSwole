@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1='Buzzswole Meal Tracker'
+  form.MealEntryMenu(action='/submit_meal' method='post')
+    label(for='meal_name') Meal:
+    input#meal_name(type='text' name='meal_name')
+    label(for='meal_calories') Calories:
+    input#meal_calories(type='number' name='meal_calories' min='1' max='1000')
+    input(type='submit' value='Log Meal')
