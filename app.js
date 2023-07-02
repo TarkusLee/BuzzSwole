@@ -38,9 +38,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.post('/submit_meal', function(request,response,next){
-  console.log(request.body.meal_name);
-  console.log(request.body.meal_calories);
+app.post('/submit_meal', (req, res) => {
+  console.log(req.body.meal_name);
+  console.log(req.body.meal_calories);
+  res.send('Got a POST request at /submit_meal');
 })
 
 module.exports = app;
