@@ -40,6 +40,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(app.get('port'), function() {
+  console.log('Instance running at http://localhost:'+app.get('port'));
+})
+
 app.post('/submit_meal', (req, res) => {
   console.log(req.body.meal_name);
   console.log(req.body.meal_calories);
